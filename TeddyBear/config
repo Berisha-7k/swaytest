@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# ---------------------------------------------
+# 1. Definitions
+# ---------------------------------------------
+# Source directory containing config files
+SOURCE_DIR="$(pwd)/RubberDuck/config"
+
+# Target directory where configs will be deployed
+TARGET_DIR="$HOME/.config"
+
+# Backup directory for changed files
+BACKUP_DIR="$HOME/.config_backup_$(date +%Y%m%d_%H%M%S)"
+
+# ---------------------------------------------
+# 2. Create backup directory
+# ---------------------------------------------
+echo -e "${NORD_YELLOW}Creating backup directory for changed files...${RESET}"
+mkdir -p "$BACKUP_DIR"
+
+# ---------------------------------------------
+# 3. Backup only changed files
+# ---------------------------------------------
+echo -e "${NORD_YELLOW}Checking for changed files...${RESET}"
+for src_file in "$SOURCE_DIR"/*; do
+    filename=$(basename "$src_file")
+    target_file="$TARGET_DIR/$filename"
+
+    # If the file exists in the target and is different, back it up
+    if [ -f "$target_file" ] && ! cmp -s "$src_file" "$target_file"; then
+        echo -e "${NORD_YELLOW}Backing up changed file: $filename ${RESET}"
+        cp "$target_file" "$BACKUP_DIR/"
+    fi
+done
+
+# ---------------------------------------------
+# 4. Copy config files to target
+# ---------------------------------------------
+echo -e "${NORD_YELLOW}Copying config files to target directory...${RESET}"
+cp -r "$SOURCE_DIR/"* "$TARGET_DIR/"
+
+# ---------------------------------------------
+# 5. Update permissions
+# ---------------------------------------------
+echo -e "${NORD_YELLOW}Updating file permissions...${RESET}"
+chown -R $(whoami):$(whoami) "$TARGET_DIR"
+
+# ---------------------------------------------
+# 6. Finish
+# ---------------------------------------------
+echo -e "${NORD_YELLOW}Config deployment completed successfully! $ ${RESET}"
+

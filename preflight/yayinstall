@@ -1,0 +1,20 @@
+#!/bin/bash
+set -eEuo pipefail
+
+#--------------------
+# Ensure yay is installed
+#--------------------
+if ! command -v yay &> /dev/null; then
+    echo -e "${NORD_YELLOW}>>>  yay not found, installing...${RESET}"
+    sudo pacman -S --needed --noconfirm git base-devel
+    tmp_dir=$(mktemp -d)
+    git clone https://aur.archlinux.org/yay.git "$tmp_dir/yay"
+    cd "$tmp_dir/yay"
+    makepkg -si --noconfirm
+    cd - >/dev/null
+    rm -rf "$tmp_dir"
+    echo -e "${NORD_GREEN}>>> yay installed! ${RESET}"
+else
+    echo -e "${NORD_GREEN}>>> yay is already installed, skipping.${RESET}"
+fi
+

@@ -1,0 +1,56 @@
+# Colors
+#color=#2e3440
+image=/home/x3ck/Pictures/wallpapers/clay-banks.jpg
+#blur=3
+inside-color=#4c566a
+line-color=#4c566a
+ring-color=#81a1c1
+text-color=#d8dee9
+
+layout-bg-color=#4c566a
+layout-text-color=#d8dee9
+
+inside-clear-color=#5e81ac
+line-clear-color=#4c566a
+ring-clear-color=#4c566a
+text-clear-color=#d8dee9
+
+inside-ver-color=#81a1c1
+line-ver-color=#4c566a
+ring-ver-color=#81a1c1
+text-ver-color=#4c566a
+
+inside-wrong-color=#BF616A
+line-wrong-color=#4c566a
+ring-wrong-color=#BF616A
+text-wrong-color=#4c566a
+
+bs-hl-color=#BF616A
+key-hl-color=#a3be8c
+
+text-caps-lock-color=#d8dee9
+
+# Size
+indicator-radius=90
+indicator-thickness=10
+
+# Flags
+daemonize
+ignore-empty-password
+indicator-caps-lock
+show-failed-attempts
+#show-keyboard-layout
+indicator-idle-visible
+
+
+# Effects
+#fade-in=3
+clock
+timestr=%H:%M:%S
+datestr=%Y-%m-%d
+timestr-font="EnvyCodeRVS 20"
+datestr-font="EnvyCodeRVS 16"
+blur=50
+tint=#2e3440
+dim=0.5
+

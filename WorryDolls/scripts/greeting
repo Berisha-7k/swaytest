@@ -1,0 +1,12 @@
+hour=$(date +%H)
+if [ $hour -lt 12 ]; then
+    greeting="GOOD MORNING $USER"
+elif [ $hour -le 16 ]; then
+    greeting="GOOD AFTERNOON $USER"
+elif [ $hour -le 20 ]; then
+    greeting="GOOD EVENING $USER"
+else
+    greeting="GOOD NIGHT $USER"
+fi
+
+echo -e "${NORD_PURPLE}$greeting${RESET}"
