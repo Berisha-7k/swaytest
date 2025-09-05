@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# ---------------------------------------------
+# Copying Fonts
+# ---------------------------------------------
+
+SOURCE_DIR="$HOME/RubberDuck/Fonts/"
+TARGET_DIR="$HOME/.local/share/fonts"
+
+mkdir -p "$TARGET_DIR"
+cp -r "$SOURCE_DIR/." "$TARGET_DIR/"
+
+# ---------------------------------------------
+# Font cache update
+# ---------------------------------------------
+
+fc-cache -fv

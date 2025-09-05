@@ -4,7 +4,7 @@
 # 1. Definitions
 # ---------------------------------------------
 # Source directory containing config files
-SOURCE_DIR="$(pwd)/RubberDuck/rc"
+SOURCE_DIR="$(pwd)/RubberDuck/RC"
 
 # Target directory where configs will be deployed
 TARGET_DIR="$HOME/"
