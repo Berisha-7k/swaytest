@@ -4,7 +4,7 @@
 # Copying Fonts
 # ---------------------------------------------
 
-SOURCE_DIR="$HOME/RubberDuck/Fonts/"
+SOURCE_DIR="$(pwd)/RubberDuck/Fonts"
 TARGET_DIR="$HOME/.local/share/fonts"
 
 mkdir -p "$TARGET_DIR"
