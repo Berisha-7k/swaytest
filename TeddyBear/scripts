@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# ---------------------------------------------
+# 1. Definitions
+# ---------------------------------------------
+# Source directory containing config files
+SOURCE_DIR="$(pwd)/WorryDolls/scripts/4sway"
+
+# Target directory where configs will be deployed
+TARGET_DIR="/etc/sway/scripts/"
+
+# ---------------------------------------------
+# 2. Copy sway config files to target
+# ---------------------------------------------
+echo -e "${NORD_YELLOW}Copying scripts to target directory...${RESET}"
+sudo cp -r "$SOURCE_DIR/." "$TARGET_DIR/"
+
+
+# ---------------------------------------------
+# 3. Finish
+# ---------------------------------------------
+echo -e "${NORD_YELLOW}Scripts deployment completed successfully! $ ${RESET}"
+
+
