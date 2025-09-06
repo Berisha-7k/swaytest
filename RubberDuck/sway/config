@@ -257,7 +257,7 @@ bar {
     #status_command while date +'%Y-%m-%d %X'; do sleep 1; done
     #status_command while ~/Documents/scripts/spotify.sh; do sleep 1; done
     font pango: Envy Code R Regular 9
-    status_command while ~/sway-bar-update.sh; do sleep 1; done
+    status_command while /etc/sway/scripts/sway-bar-update.sh; do sleep 1; done
     workspace_buttons yes
     
 

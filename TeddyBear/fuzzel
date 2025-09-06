@@ -7,13 +7,13 @@
 SOURCE_DIR="$(pwd)/RubberDuck/fuzzel"
 
 # Target directory where configs will be deployed
-TARGET_DIR="$/etc/xdg/fuzzel"
+TARGET_DIR="/etc/xdg/fuzzel"
 
 # ---------------------------------------------
 # 2. Copy RC files to target
 # ---------------------------------------------
 echo -e "${NORD_YELLOW}Copying config files to target directory...${RESET}"
-sudo cp -a "$SOURCE_DIR/." "$TARGET_DIR/"
+sudo cp -a "$SOURCE_DIR/"* "$TARGET_DIR/"
 
 
 # ---------------------------------------------
