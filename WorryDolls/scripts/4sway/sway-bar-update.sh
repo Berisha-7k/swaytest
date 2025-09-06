@@ -20,6 +20,7 @@ volume=$(/etc/sway/scripts/volume.sh)
 
 ### Greetings
 greeting=$(/etc/sway/scripts/greetings.sh)
+
 ### Weather
 weather=$(cat ~/.cache/weather.json | jq '.main.temp' | awk '{print int($1+0.5)}')
 ##
